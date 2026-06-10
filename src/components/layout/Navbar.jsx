@@ -32,6 +32,26 @@ export default function Navbar() {
   const handleApplyNow = () => {
     closeMenu();
     navigate(site.applicationPath);
+    window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    });
+  };
+
+  const handleMobileNavigation = (path) => {
+    setIsClosing(true);
+    setIsOpen(false);
+    navigate(path);
+
+    window.clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = window.setTimeout(() => {
+      setIsClosing(false);
+    }, 260);
+
+    window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
   };
 
   useEffect(() => {
@@ -171,18 +191,16 @@ export default function Navbar() {
               <div className="mt-4 pt-4 border-t border-white/10 lg:hidden flex flex-col space-y-4 pb-2">
                 <nav className="flex flex-col space-y-2.5">
                   {navItems.map((link) => (
-                    <NavLink
+                    <button
                       key={link.label}
-                      to={link.path}
-                      onClick={closeMenu}
-                      className={({ isActive }) =>
-                        `text-[11px] font-bold uppercase tracking-wider transition-colors py-1 ${
-                          isActive ? 'text-white' : 'text-white/60 hover:text-white'
-                        }`
-                      }
+                      type="button"
+                      onClick={() => handleMobileNavigation(link.path)}
+                      className={`text-left text-[11px] font-bold uppercase tracking-wider transition-colors py-1 ${
+                        location.pathname === link.path ? 'text-white' : 'text-white/60 hover:text-white'
+                      }`}
                     >
                       {link.label}
-                    </NavLink>
+                    </button>
                   ))}
                   <button
                     type="button"
