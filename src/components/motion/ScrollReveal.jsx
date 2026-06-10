@@ -4,11 +4,7 @@ import { useLocation } from 'react-router-dom';
 const revealSelectors = [
   'main section',
   'main .premium-card',
-  'main .eyebrow',
-  'main h1',
   'main h2',
-  'main h3',
-  'main p',
   'main form',
 ].join(',');
 
@@ -31,7 +27,7 @@ export default function ScrollReveal() {
     items.forEach((element, index) => {
       element.classList.remove('scroll-reveal-visible');
       element.classList.add('scroll-reveal');
-      element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 45}ms`);
+      element.style.setProperty('--reveal-delay', `${Math.min(index % 3, 2) * 24}ms`);
     });
 
     const observer = new IntersectionObserver(
@@ -45,8 +41,8 @@ export default function ScrollReveal() {
       },
       {
         root: null,
-        rootMargin: '0px 0px -8% 0px',
-        threshold: 0.12,
+        rootMargin: '160px 0px -4% 0px',
+        threshold: 0.04,
       },
     );
 

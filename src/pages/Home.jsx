@@ -189,43 +189,16 @@ export default function Home() {
           {/* Right: Premium 3D Floating Creator Mockup */}
           <div className="lg:col-span-5 flex justify-center relative">
             {/* Soft decorative background glow pulse */}
-            <motion.div
+            <div
               className="absolute inset-0 bg-gradient-to-tr from-burgundy/15 to-gold/15 blur-3xl rounded-3xl -z-10"
-              animate={{
-                scale: [1, 1.08, 1],
-                opacity: [0.7, 0.9, 0.7]
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
             />
 
             {/* Subtle floating background shapes */}
-            <motion.div
+            <div
               className="absolute -top-10 -right-10 w-20 h-20 rounded-full bg-gold/10 blur-md -z-10"
-              animate={{
-                y: [0, -10, 0],
-                x: [0, 8, 0]
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
             />
-            <motion.div
+            <div
               className="absolute -bottom-12 -left-12 w-28 h-28 rounded-full bg-burgundy/5 blur-lg -z-10"
-              animate={{
-                y: [0, 12, 0],
-                x: [0, -10, 0]
-              }}
-              transition={{
-                duration: 7,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
             />
 
             {/* Parent Perspective Wrapper for staggered entrance */}
@@ -237,16 +210,6 @@ export default function Home() {
             >
               {/* Secondary floating stats card peeking from top-left */}
               <motion.div
-                animate={{
-                  y: [0, 8, 0],
-                  rotateZ: [2, 4, 2]
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5
-                }}
                 whileHover={{ scale: 1.05, y: -4 }}
                 className="absolute -top-6 -left-8 z-20 hidden sm:flex bg-white/95 backdrop-blur-md border border-espresso/[0.04] p-3 rounded-2xl shadow-depth items-center gap-2"
               >
@@ -261,16 +224,6 @@ export default function Home() {
 
               {/* Third floating badge peeking from bottom-right */}
               <motion.div
-                animate={{
-                  y: [0, -6, 0],
-                  rotateZ: [-3, -1, -3]
-                }}
-                transition={{
-                  duration: 5.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.2
-                }}
                 whileHover={{ scale: 1.05, y: -4 }}
                 className="absolute -bottom-6 -right-6 z-20 hidden sm:flex bg-white/95 backdrop-blur-md border border-espresso/[0.04] p-3 rounded-2xl shadow-depth items-center gap-2"
               >
@@ -285,15 +238,6 @@ export default function Home() {
 
               {/* The Main creator card with slow idle floating motion and 3D hover effects */}
               <motion.div
-                animate={{
-                  y: [0, -8, 0],
-                  rotateZ: [-1, 0, -1]
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
                 whileHover={{
                   scale: 1.03,
                   y: -12,
