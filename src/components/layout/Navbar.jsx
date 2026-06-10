@@ -15,6 +15,12 @@ export default function Navbar() {
   const isDrawerShaped = isOpen || isClosing;
   const logoImg = `${import.meta.env.BASE_URL}agency-logo-nav.png`;
 
+  const scrollToPageTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
+
   const closeMenu = () => {
     if (!isOpen) {
       setIsClosing(false);
@@ -32,26 +38,28 @@ export default function Navbar() {
   const handleApplyNow = () => {
     closeMenu();
     navigate(site.applicationPath);
-    window.requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-    });
+    scrollToPageTop();
+    window.requestAnimationFrame(scrollToPageTop);
+    window.setTimeout(scrollToPageTop, 280);
   };
 
   const handleMobileNavigation = (path) => {
     setIsClosing(true);
     setIsOpen(false);
-    navigate(path);
+
+    if (location.pathname !== path) {
+      navigate(path);
+    }
 
     window.clearTimeout(closeTimerRef.current);
     closeTimerRef.current = window.setTimeout(() => {
       setIsClosing(false);
     }, 260);
 
-    window.requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    });
+    scrollToPageTop();
+    window.requestAnimationFrame(scrollToPageTop);
+    window.setTimeout(scrollToPageTop, 80);
+    window.setTimeout(scrollToPageTop, 280);
   };
 
   useEffect(() => {

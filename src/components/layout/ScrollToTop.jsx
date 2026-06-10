@@ -2,7 +2,7 @@ import { useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function ScrollToTop() {
-  const { pathname, search, hash } = useLocation();
+  const { pathname, search, hash, key } = useLocation();
 
   useLayoutEffect(() => {
     if (hash) return;
@@ -10,7 +10,7 @@ export default function ScrollToTop() {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
-  }, [pathname, search, hash]);
+  }, [pathname, search, hash, key]);
 
   return null;
 }
