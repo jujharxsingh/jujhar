@@ -3,7 +3,6 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navItems, site } from '../../content/site';
-import logoImg from '../../../assets/agency-logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +13,7 @@ export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const isDrawerShaped = isOpen || isClosing;
+  const logoImg = `${import.meta.env.BASE_URL}agency-logo-nav.png`;
 
   const closeMenu = () => {
     if (!isOpen) {

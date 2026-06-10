@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
 import { site } from '../content/site';
-import logoImg from '../../assets/agency-logo.png';
 import ColorTransition from '../components/ui/ColorTransition';
 
 export default function Home() {
@@ -15,9 +14,7 @@ export default function Home() {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const isMobile = window.innerWidth < 768;
     
-    const playTimer = window.setTimeout(() => {
-      if (!videoRef.current) return;
-
+    if (videoRef.current) {
       if (mediaQuery.matches || isMobile) {
         videoRef.current.pause();
       } else {
@@ -25,9 +22,7 @@ export default function Home() {
           console.log("Autoplay prevented or video play failed", err);
         });
       }
-    }, 800);
-
-    return () => window.clearTimeout(playTimer);
+    }
   }, []);
 
   // Stagger variants for text/badge/CTA loading
@@ -84,7 +79,7 @@ export default function Home() {
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
           />
           {/* Soft white overlay above the video with 70% opacity for more video visibility */}
@@ -512,7 +507,7 @@ export default function Home() {
                 <img
                   src={assetPath('/images/creator-andrea.jpg')}
                   alt="Andrea"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
@@ -548,7 +543,7 @@ export default function Home() {
                 <img
                   src={assetPath('/images/creator-coco.jpg')}
                   alt="Coco Singh"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   className="absolute inset-0 h-full w-full object-cover"
                 />

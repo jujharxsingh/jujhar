@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { navItems, site } from '../../content/site';
-import logoImg from '../../../assets/agency-logo.png';
 import ColorTransition from '../ui/ColorTransition';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const logoImg = `${import.meta.env.BASE_URL}agency-logo-nav.png`;
 
   return (
     <>
