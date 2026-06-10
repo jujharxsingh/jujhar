@@ -15,7 +15,7 @@ import ApplyContact from './pages/ApplyContact';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <div className="relative flex min-h-screen flex-col overflow-x-clip bg-ivory text-espresso selection:bg-gold/30 selection:text-espresso">
         <div className="pointer-events-none fixed inset-0 -z-50 bg-dot-gold opacity-35 [mask-image:radial-gradient(ellipse_60%_45%_at_50%_0%,#000_55%,transparent_100%)]" />

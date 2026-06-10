@@ -9,6 +9,7 @@ import ColorTransition from '../components/ui/ColorTransition';
 
 export default function Home() {
   const videoRef = useRef(null);
+  const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -75,7 +76,7 @@ export default function Home() {
           {/* Background Video */}
           <video 
             ref={videoRef}
-            src="/videos/Animated%20background.webm"
+            src={assetPath('/videos/Animated%20background.webm')}
             loop
             muted
             playsInline
@@ -308,7 +309,7 @@ export default function Home() {
                 {/* Image Container representing a creator */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[2rem] bg-zinc-100">
                   <img
-                    src="/images/creator-photo.png"
+                    src={assetPath('/images/creator-photo.png')}
                     alt="Ăugust Řush"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
@@ -503,7 +504,7 @@ export default function Home() {
             <div className="premium-card card-hover-gradient-2 p-6 flex flex-col md:flex-row gap-6 items-center">
               <div className="w-full md:w-1/2 aspect-[4/5] bg-zinc-950 rounded-xl overflow-hidden relative">
                 <img
-                  src="/images/creator-andrea.jpg"
+                  src={assetPath('/images/creator-andrea.jpg')}
                   alt="Andrea"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
@@ -537,7 +538,7 @@ export default function Home() {
             <div className="premium-card card-hover-gradient-3 p-6 flex flex-col md:flex-row gap-6 items-center">
               <div className="w-full md:w-1/2 aspect-[4/5] bg-zinc-950 rounded-xl overflow-hidden relative">
                 <img
-                  src="/images/creator-coco.jpg"
+                  src={assetPath('/images/creator-coco.jpg')}
                   alt="Coco Singh"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
