@@ -15,7 +15,9 @@ export default function Home() {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const isMobile = window.innerWidth < 768;
     
-    if (videoRef.current) {
+    const playTimer = window.setTimeout(() => {
+      if (!videoRef.current) return;
+
       if (mediaQuery.matches || isMobile) {
         videoRef.current.pause();
       } else {
@@ -23,7 +25,9 @@ export default function Home() {
           console.log("Autoplay prevented or video play failed", err);
         });
       }
-    }
+    }, 800);
+
+    return () => window.clearTimeout(playTimer);
   }, []);
 
   // Stagger variants for text/badge/CTA loading
@@ -80,7 +84,7 @@ export default function Home() {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
             className="absolute inset-0 w-full h-full object-cover"
           />
           {/* Soft white overlay above the video with 70% opacity for more video visibility */}
@@ -309,8 +313,10 @@ export default function Home() {
                 {/* Image Container representing a creator */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[2rem] bg-zinc-100">
                   <img
-                    src={assetPath('/images/creator-photo.png')}
+                    src={assetPath('/images/creator-photo-optimized.jpg')}
                     alt="Ăugust Řush"
+                    decoding="async"
+                    fetchPriority="high"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/20 to-transparent z-10" />
@@ -506,6 +512,8 @@ export default function Home() {
                 <img
                   src={assetPath('/images/creator-andrea.jpg')}
                   alt="Andrea"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-transparent to-transparent z-10" />
@@ -540,6 +548,8 @@ export default function Home() {
                 <img
                   src={assetPath('/images/creator-coco.jpg')}
                   alt="Coco Singh"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-transparent to-transparent z-10" />
