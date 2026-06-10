@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import ScrollToTop from './components/layout/ScrollToTop';
+import ScrollReveal from './components/motion/ScrollReveal';
 
 // Pages
 import Home from './pages/Home';
@@ -22,6 +23,7 @@ export default function App() {
   return (
     <Router basename={routerBasename}>
       <ScrollToTop />
+      <ScrollReveal />
       <div className="relative flex min-h-screen flex-col overflow-x-clip bg-ivory text-espresso selection:bg-gold/30 selection:text-espresso">
         <div className="pointer-events-none fixed inset-0 -z-50 bg-dot-gold opacity-35 [mask-image:radial-gradient(ellipse_60%_45%_at_50%_0%,#000_55%,transparent_100%)]" />
         <Navbar />
