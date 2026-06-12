@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Facebook, Instagram, Menu, MessageCircle, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navItems, site } from '../../content/site';
 
@@ -157,15 +157,44 @@ export default function Navbar() {
           <div className="hidden lg:block h-4 w-[1px] bg-white/15 mx-1" />
 
           {/* Desktop Action */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-3">
             <button
               type="button"
               onClick={handleApplyNow}
-              className="group relative inline-flex min-h-8 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-white px-5 py-2 text-[11px] font-extrabold uppercase tracking-wider text-espresso shadow-[0_12px_28px_rgba(0,0,0,0.22)] transition-all duration-300 ease-smooth hover:scale-105 hover:border-transparent hover:text-white hover:shadow-[0_16px_36px_rgba(131,24,67,0.35)] active:scale-100"
+              className="text-[13px] font-bold tracking-normal text-white/70 transition-colors duration-250 hover:text-white"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-burgundy via-gold to-burgundy opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <span className="relative z-10">Apply Now</span>
+              Apply Now!
             </button>
+            <div className="h-5 w-[1px] bg-white/15" />
+            <div className="flex items-center gap-2">
+              <a
+                href={site.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook profile"
+                className="grid h-7 w-7 place-items-center rounded-md text-white/55 transition-all duration-250 hover:bg-white/10 hover:text-white"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href={site.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram profile"
+                className="grid h-7 w-7 place-items-center rounded-md text-white/55 transition-all duration-250 hover:bg-white/10 hover:text-white"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href={site.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp chat"
+                className="grid h-7 w-7 place-items-center rounded-md text-white/55 transition-all duration-250 hover:bg-white/10 hover:text-white"
+              >
+                <MessageCircle className="h-4 w-4" />
+              </a>
+            </div>
           </div>
 
           {/* Mobile Toggle */}
@@ -210,14 +239,44 @@ export default function Navbar() {
                       {link.label}
                     </button>
                   ))}
-                  <button
-                    type="button"
-                    onClick={handleApplyNow}
-                    className="group relative mt-2 inline-flex min-h-11 w-full items-center justify-center overflow-hidden rounded-full border border-white/15 bg-white px-6 py-2.5 text-center text-[11px] font-extrabold uppercase tracking-wider text-espresso shadow-[0_12px_28px_rgba(0,0,0,0.22)] transition-all duration-300 ease-smooth hover:scale-[1.02] hover:border-transparent hover:text-white hover:shadow-[0_16px_36px_rgba(131,24,67,0.35)] active:scale-100"
-                  >
-                    <span className="absolute inset-0 bg-gradient-to-r from-burgundy via-gold to-burgundy opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <span className="relative z-10">Apply Now</span>
-                  </button>
+                  <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-4">
+                    <button
+                      type="button"
+                      onClick={handleApplyNow}
+                      className="text-[13px] font-bold text-white/75 transition-colors hover:text-white"
+                    >
+                      Apply Now!
+                    </button>
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={site.facebookUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook profile"
+                        className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-white/60 transition-all hover:bg-white/10 hover:text-white"
+                      >
+                        <Facebook className="h-4 w-4" />
+                      </a>
+                      <a
+                        href={site.instagramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram profile"
+                        className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-white/60 transition-all hover:bg-white/10 hover:text-white"
+                      >
+                        <Instagram className="h-4 w-4" />
+                      </a>
+                      <a
+                        href={site.whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp chat"
+                        className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-white/60 transition-all hover:bg-white/10 hover:text-white"
+                      >
+                        <MessageCircle className="h-4 w-4" />
+                      </a>
+                    </div>
+                  </div>
                 </nav>
               </div>
             </motion.div>

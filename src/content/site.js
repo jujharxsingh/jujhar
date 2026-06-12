@@ -8,6 +8,8 @@ export const site = {
   shortName: 'IM Models',
   description: 'Premium creator and live streaming management for 18+ creators.',
   whatsappUrl: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
+  facebookUrl: 'https://www.facebook.com/profile.php?id=61585845304741',
+  instagramUrl: 'https://www.instagram.com/indianmodels.live/',
   googleSheetsWebAppUrl: import.meta.env.VITE_GOOGLE_SHEETS_WEB_APP_URL || '',
   applicationPath: '/apply',
 };
