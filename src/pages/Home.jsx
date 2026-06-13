@@ -230,6 +230,11 @@ const modelsData = [
   }
 ];
 
+const publicAsset = (path) => {
+  if (!path || /^https?:\/\//i.test(path)) return path;
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+};
+
 // Lightweight 3D Card with interactive tilt and glare
 const Model3DCard = ({ model }) => {
   const handleMouseMove = (e) => {
@@ -277,9 +282,9 @@ const Model3DCard = ({ model }) => {
       {/* Main image container */}
       <div className="w-full aspect-[4/5] bg-zinc-950 rounded-xl overflow-hidden relative">
         <img
-          src={model.image}
+          src={publicAsset(model.image)}
           alt={model.name}
-          loading="lazy"
+          loading="eager"
           draggable="false"
           className="absolute inset-0 h-full w-full object-cover"
         />
