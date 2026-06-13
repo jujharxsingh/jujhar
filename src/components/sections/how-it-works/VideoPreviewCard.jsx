@@ -2,12 +2,19 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Video, Eye, Sparkles } from 'lucide-react';
 
+const publicAsset = (path) => {
+  if (!path || /^https?:\/\//i.test(path)) return path;
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+};
+
 export default function VideoPreviewCard({ src = '/videos/how-it-works/live-intro.mp4', poster = '/images/how-it-works/poster-live-intro.jpg' }) {
   const cardRef = useRef(null);
   const [videoError, setVideoError] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const videoRef = useRef(null);
+  const normalizedSrc = publicAsset(src);
+  const normalizedPoster = publicAsset(poster);
 
   // Mouse tilt tracking relative to card center
   const handleMouseMove = (e) => {
@@ -35,14 +42,19 @@ export default function VideoPreviewCard({ src = '/videos/how-it-works/live-intr
   };
 
   useEffect(() => {
+    setVideoError(false);
+  }, [normalizedSrc]);
+
+  useEffect(() => {
     if (videoRef.current && !videoError) {
+      videoRef.current.load();
       videoRef.current.play()
         .then(() => setIsPlaying(true))
         .catch(() => {
           setIsPlaying(false);
         });
     }
-  }, [videoError, src]);
+  }, [videoError, normalizedSrc]);
 
   return (
     <motion.div
@@ -77,8 +89,8 @@ export default function VideoPreviewCard({ src = '/videos/how-it-works/live-intr
       {!videoError ? (
         <video
           ref={videoRef}
-          src={src}
-          poster={poster}
+          src={normalizedSrc}
+          poster={normalizedPoster}
           onError={handleVideoError}
           autoPlay
           muted

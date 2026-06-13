@@ -17,6 +17,11 @@ import {
   Laptop
 } from 'lucide-react';
 
+const publicAsset = (path) => {
+  if (!path || /^https?:\/\//i.test(path)) return path;
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+};
+
 export default function InteractiveLiveMockup({ activeStep = 0 }) {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
@@ -33,7 +38,7 @@ export default function InteractiveLiveMockup({ activeStep = 0 }) {
     '/videos/how-it-works/step4-grow.mp4'
   ];
 
-  const currentVideoSrc = videoSources[activeStep] || videoSources[0];
+  const currentVideoSrc = publicAsset(videoSources[activeStep] || videoSources[0]);
 
   // Mouse tilt tracking relative to container center
   const handleMouseMove = (e) => {
