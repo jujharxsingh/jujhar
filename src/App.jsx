@@ -13,6 +13,7 @@ import Benefits from './pages/Benefits';
 import Proof from './pages/Proof';
 import CreatorTips from './pages/CreatorTips';
 import ApplyContact from './pages/ApplyContact';
+import StyleReference from './pages/StyleReference';
 
 export default function App() {
   const routerBasename =
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/proof" element={<Proof />} />
             <Route path="/tips" element={<CreatorTips />} />
             <Route path="/apply" element={<ApplyContact />} />
+            <Route path="/style-reference" element={<StyleReference />} />
           </Routes>
         </main>
 

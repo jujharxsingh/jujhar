@@ -1286,3 +1286,89 @@
     }
   }
 }
+
+/* GLOBAL CONTRAST & VISIBILITY ENHANCEMENTS */
+.text-espresso\/40 {
+  color: rgba(24, 24, 27, 0.65) !important;
+}
+.text-espresso\/45 {
+  color: rgba(24, 24, 27, 0.68) !important;
+}
+.text-espresso\/50 {
+  color: rgba(24, 24, 27, 0.72) !important;
+}
+.text-espresso\/55 {
+  color: rgba(24, 24, 27, 0.76) !important;
+}
+.text-espresso\/60 {
+  color: rgba(24, 24, 27, 0.8) !important;
+}
+.text-espresso\/65 {
+  color: rgba(24, 24, 27, 0.84) !important;
+}
+.text-espresso\/70 {
+  color: rgba(24, 24, 27, 0.88) !important;
+}
+.text-espresso\/75 {
+  color: rgba(24, 24, 27, 0.92) !important;
+}
+.text-espresso\/80 {
+  color: rgba(24, 24, 27, 0.96) !important;
+}
+.text-espresso\/85 {
+  color: rgba(24, 24, 27, 0.99) !important;
+}
+
+/* Scaled arbitrary font sizes for improved readability */
+.text-\[6px\] {
+  font-size: 8px !important;
+}
+.text-\[6\.5px\] {
+  font-size: 8.5px !important;
+}
+.text-\[7px\] {
+  font-size: 9.5px !important;
+}
+.text-\[7\.5px\] {
+  font-size: 10.5px !important;
+}
+.text-\[8px\] {
+  font-size: 11.2px !important;
+}
+.text-\[8\.5px\] {
+  font-size: 11.8px !important;
+}
+.text-\[9px\] {
+  font-size: 12.5px !important;
+}
+.text-\[9\.5px\] {
+  font-size: 13px !important;
+}
+.text-\[10px\] {
+  font-size: 13.8px !important;
+}
+.text-\[10\.5px\] {
+  font-size: 14.2px !important;
+}
+.text-\[11px\] {
+  font-size: 14.8px !important;
+}
+.text-\[12px\] {
+  font-size: 15.8px !important;
+}
+.text-\[12\.5px\] {
+  font-size: 16.2px !important;
+}
+.text-\[13px\] {
+  font-size: 16.8px !important;
+}
+
+/* Prevent global contrast overrides from affecting the navigation header layout */
+header .text-\[6px\] { font-size: 6px !important; }
+header .text-\[7px\] { font-size: 7px !important; }
+header .text-\[9px\] { font-size: 9px !important; }
+header .text-\[10px\] { font-size: 10px !important; }
+header .text-\[10\.5px\] { font-size: 10.5px !important; }
+header .text-\[11px\] { font-size: 11px !important; }
+header .text-\[12px\] { font-size: 12px !important; }
+header .text-\[13px\] { font-size: 13px !important; }

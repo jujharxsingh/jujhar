@@ -88,7 +88,7 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between">
           {/* Logo and Brand Name */}
-          <NavLink to="/" className="flex min-w-0 items-center space-x-2.5 group" onClick={closeMenu}>
+          <NavLink to="/" className="flex min-w-0 items-center space-x-2 group" onClick={closeMenu}>
             <motion.div 
               layout
               className={`relative flex items-center justify-center overflow-hidden rounded-xl bg-white/10 border border-white/10 p-0.5 transition-all duration-350 ease-smooth group-hover:scale-105 shadow-sm ${
@@ -102,20 +102,26 @@ export default function Navbar() {
               />
             </motion.div>
             <div className="flex min-w-0 flex-col">
-              <span className="truncate font-sans text-[10px] font-extrabold tracking-wider text-white uppercase leading-none">
+              <span className={`truncate font-sans font-extrabold tracking-wider text-white uppercase leading-none transition-all duration-300 ${
+                isScrolled ? 'text-[9px]' : 'text-[10px]'
+              }`}>
                 IM Models
               </span>
-              <span className="truncate font-mono text-[7px] font-bold tracking-widest text-gold-light uppercase mt-0.5 leading-none">
+              <span className={`truncate font-mono font-bold tracking-widest text-gold-light uppercase mt-0.5 leading-none transition-all duration-300 ${
+                isScrolled ? 'text-[6px]' : 'text-[7px]'
+              }`}>
                 Agency
               </span>
             </div>
           </NavLink>
 
           {/* Separator 1 */}
-          <div className="hidden lg:block h-4 w-[1px] bg-white/15 mx-1" />
+          <div className="hidden lg:block h-4 w-[1px] bg-white/15 mx-0.5" />
 
           {/* Desktop Navigation */}
-          <nav className="hidden space-x-1 lg:flex relative items-center">
+          <nav className={`hidden lg:flex relative items-center transition-all duration-300 ${
+            isScrolled ? 'space-x-0.5' : 'space-x-1'
+          }`}>
             {navItems.map((link, index) => {
               const isActive = location.pathname === link.path;
               return (
@@ -124,7 +130,9 @@ export default function Navbar() {
                   to={link.path}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  className={`relative px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider transition-colors duration-250 ${
+                  className={`relative font-bold uppercase tracking-wider transition-all duration-300 ${
+                    isScrolled ? 'px-2.5 py-1.5 text-[10.5px]' : 'px-3.5 py-1.5 text-[11px]'
+                  } ${
                     isActive ? 'text-white' : 'text-white/60 hover:text-white'
                   }`}
                 >
@@ -154,45 +162,57 @@ export default function Navbar() {
           </nav>
 
           {/* Separator 2 */}
-          <div className="hidden lg:block h-4 w-[1px] bg-white/15 mx-1" />
+          <div className="hidden lg:block h-4 w-[1px] bg-white/15 mx-0.5" />
 
           {/* Desktop Action */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className={`hidden lg:flex items-center transition-all duration-300 ${
+            isScrolled ? 'gap-2' : 'gap-3'
+          }`}>
             <button
               type="button"
               onClick={handleApplyNow}
-              className="text-[13px] font-bold tracking-normal text-white/70 transition-colors duration-250 hover:text-white"
+              className={`font-bold tracking-normal text-white/70 transition-all duration-300 hover:text-white ${
+                isScrolled ? 'text-[12px]' : 'text-[13px]'
+              }`}
             >
               Apply Now!
             </button>
             <div className="h-5 w-[1px] bg-white/15" />
-            <div className="flex items-center gap-2">
+            <div className={`flex items-center transition-all duration-300 ${
+              isScrolled ? 'gap-1.5' : 'gap-2'
+            }`}>
               <a
                 href={site.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook profile"
-                className="grid h-7 w-7 place-items-center rounded-md text-white/55 transition-all duration-250 hover:bg-white/10 hover:text-white"
+                className={`grid place-items-center rounded-md text-white/55 transition-all duration-300 hover:bg-white/10 hover:text-white ${
+                  isScrolled ? 'h-6 w-6' : 'h-7 w-7'
+                }`}
               >
-                <Facebook className="h-4 w-4" />
+                <Facebook className={`transition-all duration-300 ${isScrolled ? 'h-3.5 w-3.5' : 'h-4 w-4'}`} />
               </a>
               <a
                 href={site.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram profile"
-                className="grid h-7 w-7 place-items-center rounded-md text-white/55 transition-all duration-250 hover:bg-white/10 hover:text-white"
+                className={`grid place-items-center rounded-md text-white/55 transition-all duration-300 hover:bg-white/10 hover:text-white ${
+                  isScrolled ? 'h-6 w-6' : 'h-7 w-7'
+                }`}
               >
-                <Instagram className="h-4 w-4" />
+                <Instagram className={`transition-all duration-300 ${isScrolled ? 'h-3.5 w-3.5' : 'h-4 w-4'}`} />
               </a>
               <a
                 href={site.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp chat"
-                className="grid h-7 w-7 place-items-center rounded-md text-white/55 transition-all duration-250 hover:bg-white/10 hover:text-white"
+                className={`grid place-items-center rounded-md text-white/55 transition-all duration-300 hover:bg-white/10 hover:text-white ${
+                  isScrolled ? 'h-6 w-6' : 'h-7 w-7'
+                }`}
               >
-                <MessageCircle className="h-4 w-4" />
+                <MessageCircle className={`transition-all duration-300 ${isScrolled ? 'h-3.5 w-3.5' : 'h-4 w-4'}`} />
               </a>
             </div>
           </div>
