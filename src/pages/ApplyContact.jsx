@@ -1,9 +1,27 @@
 import React, { useState } from 'react';
 import { Shield, MessageCircle, ArrowRight, CheckCircle2, AlertCircle, Sparkles, HelpCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
 import { site } from '../content/site';
 
 export default function ApplyContact() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.05 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.15, ease: 'easeOut' }
+    }
+  };
+
   const [formData, setFormData] = useState({
     name: '',
     whatsapp: '',
@@ -82,21 +100,34 @@ export default function ApplyContact() {
 
       {/* Hero Intro */}
       <section className="mx-auto max-w-4xl px-6 pt-16 pb-8 text-center lg:px-8">
-        <span className="eyebrow">Onboarding Application</span>
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-espresso mt-3">
-          Start Your Creative Journey
-        </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-base text-espresso/70 sm:text-lg font-light leading-relaxed">
-          Submit your registration details below. Our talent managers will contact you within 24 hours to schedule an onboarding consultation.
-        </p>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-center"
+        >
+          <motion.span variants={itemVariants} className="eyebrow inline-block">Onboarding Application</motion.span>
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl font-bold tracking-tight text-espresso mt-3">
+            Start Your Creative Journey
+          </motion.h1>
+          <motion.p variants={itemVariants} className="mx-auto mt-4 max-w-2xl text-base text-espresso/70 sm:text-lg font-light leading-relaxed">
+            Submit your registration details below. Our talent managers will contact you within 24 hours to schedule an onboarding consultation.
+          </motion.p>
+        </motion.div>
       </section>
 
       {/* Main Split Layout */}
       <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left: Contact Info & Safe Wording parameters */}
-          <div className="lg:col-span-5 flex flex-col space-y-6">
-            <div className="premium-card p-8 bg-white flex flex-col space-y-6 card-hover-gradient-1">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            className="lg:col-span-5 flex flex-col space-y-6"
+          >
+            <motion.div variants={itemVariants} className="premium-card p-8 bg-white flex flex-col space-y-6 card-hover-gradient-1">
               <span className="font-mono text-[9px] uppercase tracking-widest text-gold font-bold">Creative Support</span>
               <h2 className="text-xl sm:text-2xl font-bold text-espresso leading-tight">
                 Immediate Onboarding Assistance
@@ -137,10 +168,10 @@ export default function ApplyContact() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Quick Safety Disclaimer Card */}
-            <div className="premium-card p-6 bg-espresso text-cream space-y-3">
+            <motion.div variants={itemVariants} className="premium-card p-6 bg-espresso text-cream space-y-3">
               <h3 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
                 <Shield className="h-4 w-4 text-gold" />
                 Talent Age Restriction Compliance
@@ -148,11 +179,17 @@ export default function ApplyContact() {
               <p className="text-[11px] text-cream/70 font-light leading-relaxed">
                 We strictly enforce 18+ verifications. Every applying host must present a valid passport or government ID during the final consultation session. We do not support underage applicants under any circumstances.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right: Interactive Application Form */}
-          <div className="lg:col-span-7">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.15, ease: 'easeOut' }}
+            className="lg:col-span-7"
+          >
             {isSubmitted ? (
               /* Success screen */
               <div className="premium-card p-10 bg-white text-center flex flex-col items-center space-y-6 animate-fade-in">
@@ -349,7 +386,7 @@ export default function ApplyContact() {
                 </div>
               </form>
             )}
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

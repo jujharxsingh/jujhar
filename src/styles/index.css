@@ -9,7 +9,7 @@
     --color-espresso: #18181B;
     --color-cream: #FFFFFF;
     --color-burgundy: #831843;
-    --color-gold: #C85A3C;
+    --color-gold: #870056;
     --color-ebony: #09090B;
   }
 
@@ -24,7 +24,7 @@
     @apply bg-ivory text-espresso font-sans antialiased;
     background-image:
       radial-gradient(ellipse 100% 50% at 50% -5%, rgba(131, 24, 67, 0.03) 0%, transparent 60%),
-      radial-gradient(ellipse 80% 40% at 80% 20%, rgba(200, 90, 60, 0.02) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 40% at 80% 20%, rgba(135, 0, 86, 0.025) 0%, transparent 50%),
       url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.015'/%3E%3C/svg%3E");
     background-attachment: fixed;
   }
@@ -86,8 +86,46 @@
     @apply bg-espresso/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl shadow-glass;
   }
 
+  .stats-gradient-card {
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: #FFB6C1;
+    background: linear-gradient(90deg, rgba(255, 182, 193, 1) 0%, rgba(255, 214, 231, 1) 67%, rgba(255, 240, 245, 1) 100%);
+    box-shadow: 0 18px 38px -18px rgba(255, 182, 193, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    transform: translate3d(0, 0, 0);
+    transition:
+      transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 260ms ease;
+    will-change: transform;
+  }
+
+  .stats-gradient-card:nth-child(2) {
+    background: #FFF0F5;
+    background: linear-gradient(90deg, rgba(255, 240, 245, 1) 0%, rgba(248, 215, 255, 1) 66%, rgba(230, 199, 255, 1) 100%);
+    box-shadow: 0 18px 38px -18px rgba(230, 199, 255, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  }
+
+  .stats-gradient-card:nth-child(3) {
+    background: #FFF8F8;
+    background: linear-gradient(90deg, rgba(255, 248, 248, 1) 0%, rgba(255, 221, 229, 1) 68%, rgba(248, 187, 208, 1) 100%);
+    box-shadow: 0 18px 38px -18px rgba(248, 187, 208, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  }
+
+  .stats-gradient-card:nth-child(4) {
+    background: #FFF7FA;
+    background: linear-gradient(90deg, rgba(255, 247, 250, 1) 0%, rgba(255, 225, 236, 1) 68%, rgba(255, 194, 212, 1) 100%);
+    box-shadow: 0 18px 38px -18px rgba(255, 194, 212, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  }
+
+  .stats-gradient-card:hover {
+    transform: translate3d(-8px, -8px, 0);
+    box-shadow: 0 24px 46px -20px rgba(255, 194, 212, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    filter: brightness(1.03);
+  }
+
   .text-shimmer-gold {
-    background: linear-gradient(90deg, #C85A3C 0%, #E07A5F 35%, #FF6B35 50%, #E07A5F 65%, #C85A3C 100%);
+    background: linear-gradient(90deg, #5F003D 0%, #870056 35%, #C90080 50%, #870056 65%, #5F003D 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -148,191 +186,826 @@
   }
 
   .bg-dot-gold {
-    background-image: radial-gradient(circle, rgba(200, 90, 60, 0.12) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(135, 0, 86, 0.12) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 
   /* Warm gradient transitions (Sunset/Fire) */
   .gradient-transition-warm-ld {
-    background: 
+    background:
       linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 10%, rgba(255, 255, 255, 0.8) 25%, rgba(255, 255, 255, 0) 48%, rgba(24, 24, 27, 0) 52%, rgba(24, 24, 27, 0.8) 75%, #18181B 90%, #18181B 100%),
-      linear-gradient(90deg, #2a001b 0%, #78130c 16.667%, #ce480e 33.333%, #ff8d22 50.000%, #ffd543 66.667%, #ffff69 83.333%, #ffff8d 100.000%);
+      linear-gradient(90deg, #2a001b 0%, #5F003D 18%, #870056 42%, #A8006A 66%, #C90080 100%);
   }
+
   .gradient-transition-warm-dl {
-    background: 
+    background:
       linear-gradient(to bottom, #18181B 0%, #18181B 10%, rgba(24, 24, 27, 0.8) 25%, rgba(24, 24, 27, 0) 48%, rgba(255, 255, 255, 0) 52%, rgba(255, 255, 255, 0.8) 75%, #FFFFFF 90%, #FFFFFF 100%),
-      linear-gradient(90deg, #2a001b 0%, #78130c 16.667%, #ce480e 33.333%, #ff8d22 50.000%, #ffd543 66.667%, #ffff69 83.333%, #ffff8d 100.000%);
+      linear-gradient(90deg, #2a001b 0%, #5F003D 18%, #870056 42%, #A8006A 66%, #C90080 100%);
   }
 
   /* Vibrant gradient transitions (Purple/Violet/Indigo) */
   .gradient-transition-vibrant-ld {
-    background: 
+    background:
       linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 10%, rgba(255, 255, 255, 0.8) 25%, rgba(255, 255, 255, 0) 48%, rgba(24, 24, 27, 0) 52%, rgba(24, 24, 27, 0.8) 75%, #18181B 90%, #18181B 100%),
       linear-gradient(90deg, #d9b3e2 0.000%, #d2a4e3 8.333%, #ca94e2 16.667%, #c183e1 25.000%, #b673de 33.333%, #aa63da 41.667%, #9d54d5 50.000%, #9047ce 58.333%, #833cc7 66.667%, #7533bf 75.000%, #692eb7 83.333%, #5d2bae 91.667%, #522ca4 100.000%);
   }
+
   .gradient-transition-vibrant-dl {
-    background: 
+    background:
       linear-gradient(to bottom, #18181B 0%, #18181B 10%, rgba(24, 24, 27, 0.8) 25%, rgba(24, 24, 27, 0) 48%, rgba(255, 255, 255, 0) 52%, rgba(255, 255, 255, 0.8) 75%, #FFFFFF 90%, #FFFFFF 100%),
       linear-gradient(90deg, #d9b3e2 0.000%, #d2a4e3 8.333%, #ca94e2 16.667%, #c183e1 25.000%, #b673de 33.333%, #aa63da 41.667%, #9d54d5 50.000%, #9047ce 58.333%, #833cc7 66.667%, #7533bf 75.000%, #692eb7 83.333%, #5d2bae 91.667%, #522ca4 100.000%);
   }
 
   /* Cool gradient transitions (Teal/Green) */
   .gradient-transition-cool-ld {
-    background: 
+    background:
       linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 10%, rgba(255, 255, 255, 0.8) 25%, rgba(255, 255, 255, 0) 48%, rgba(24, 24, 27, 0) 52%, rgba(24, 24, 27, 0.8) 75%, #18181B 90%, #18181B 100%),
       linear-gradient(90deg, #07aeea 0.000%, #2bf598 100.000%);
   }
+
   .gradient-transition-cool-dl {
-    background: 
+    background:
       linear-gradient(to bottom, #18181B 0%, #18181B 10%, rgba(24, 24, 27, 0.8) 25%, rgba(24, 24, 27, 0) 48%, rgba(255, 255, 255, 0) 52%, rgba(255, 255, 255, 0.8) 75%, #FFFFFF 90%, #FFFFFF 100%),
       linear-gradient(90deg, #07aeea 0.000%, #2bf598 100.000%);
   }
 
-  /* Grabient Hover Card 1 (Purple/Violet/Indigo) */
+  /* Gradient Hover Card 1 (Soft Rose) */
   .card-hover-gradient-1 {
     position: relative;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 1;
     overflow: hidden;
   }
+
   .card-hover-gradient-1::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #d9b3e2 0.000%, #d2a4e3 8.333%, #ca94e2 16.667%, #c183e1 25.000%, #b673de 33.333%, #aa63da 41.667%, #9d54d5 50.000%, #9047ce 58.333%, #833cc7 66.667%, #7533bf 75.000%, #692eb7 83.333%, #5d2bae 91.667%, #522ca4 100.000%);
+    background: #FFB6C1;
+    background: linear-gradient(90deg, rgba(255, 182, 193, 1) 0%, rgba(255, 214, 231, 1) 67%, rgba(255, 240, 245, 1) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -2;
   }
+
   .card-hover-gradient-1::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(15, 15, 17, 0.5);
-    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(10px);
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -1;
   }
+
   .card-hover-gradient-1:hover::before,
   .card-hover-gradient-1:hover::after {
     opacity: 1;
   }
+
   .card-hover-gradient-1:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px -12px rgba(131, 60, 199, 0.4);
+    box-shadow: 0 20px 40px -12px rgba(255, 182, 193, 0.45);
     border-color: transparent !important;
   }
+
   .card-hover-gradient-1:hover * {
-    color: #ffffff !important;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 255, 255, 0.15) !important;
-  }
-  .card-hover-gradient-1:hover .premium-badge {
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    border-color: rgba(255, 255, 255, 0.2) !important;
-    color: #ffffff !important;
-  }
-  .card-hover-gradient-1:hover svg {
-    stroke: #ffffff !important;
+    color: #18181B !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+    border-color: rgba(24, 24, 27, 0.08) !important;
   }
 
-  /* Grabient Hover Card 2 (Fire/Sunset) */
+  .card-hover-gradient-1:hover .premium-badge {
+    background-color: rgba(255, 255, 255, 0.34) !important;
+    border-color: rgba(24, 24, 27, 0.08) !important;
+    color: #831843 !important;
+  }
+
+  .card-hover-gradient-1:hover svg {
+    stroke: #831843 !important;
+  }
+
+  /* Gradient Hover Card 2 (Lavender Blush) */
   .card-hover-gradient-2 {
     position: relative;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 1;
     overflow: hidden;
   }
+
   .card-hover-gradient-2::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #2a001b 0.000%, #78130c 16.667%, #ce480e 33.333%, #ff8d22 50.000%, #ffd543 66.667%, #ffff69 83.333%, #ffff8d 100.000%);
+    background: #FFF0F5;
+    background: linear-gradient(90deg, rgba(255, 240, 245, 1) 0%, rgba(248, 215, 255, 1) 66%, rgba(230, 199, 255, 1) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -2;
   }
+
   .card-hover-gradient-2::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(15, 15, 17, 0.5);
-    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(10px);
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -1;
   }
+
   .card-hover-gradient-2:hover::before,
   .card-hover-gradient-2:hover::after {
     opacity: 1;
   }
+
   .card-hover-gradient-2:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px -12px rgba(206, 72, 14, 0.4);
+    box-shadow: 0 20px 40px -12px rgba(230, 199, 255, 0.5);
     border-color: transparent !important;
   }
+
   .card-hover-gradient-2:hover * {
-    color: #ffffff !important;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 255, 255, 0.15) !important;
-  }
-  .card-hover-gradient-2:hover .premium-badge {
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    border-color: rgba(255, 255, 255, 0.2) !important;
-    color: #ffffff !important;
-  }
-  .card-hover-gradient-2:hover svg {
-    stroke: #ffffff !important;
+    color: #18181B !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+    border-color: rgba(24, 24, 27, 0.08) !important;
   }
 
-  /* Grabient Hover Card 3 (Teal/Green) */
+  .card-hover-gradient-2:hover .premium-badge {
+    background-color: rgba(255, 255, 255, 0.34) !important;
+    border-color: rgba(24, 24, 27, 0.08) !important;
+    color: #831843 !important;
+  }
+
+  .card-hover-gradient-2:hover svg {
+    stroke: #831843 !important;
+  }
+
+  /* Gradient Hover Card 3 (Petal Pink) */
   .card-hover-gradient-3 {
     position: relative;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 1;
     overflow: hidden;
   }
+
   .card-hover-gradient-3::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #07aeea 0.000%, #2bf598 100.000%);
+    background: #FFF8F8;
+    background: linear-gradient(90deg, rgba(255, 248, 248, 1) 0%, rgba(255, 221, 229, 1) 68%, rgba(248, 187, 208, 1) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -2;
   }
+
   .card-hover-gradient-3::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(15, 15, 17, 0.5);
-    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(10px);
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -1;
   }
+
   .card-hover-gradient-3:hover::before,
   .card-hover-gradient-3:hover::after {
     opacity: 1;
   }
+
   .card-hover-gradient-3:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px -12px rgba(43, 245, 152, 0.4);
+    box-shadow: 0 20px 40px -12px rgba(248, 187, 208, 0.48);
     border-color: transparent !important;
   }
+
   .card-hover-gradient-3:hover * {
-    color: #ffffff !important;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #18181B !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+    border-color: rgba(24, 24, 27, 0.08) !important;
   }
+
   .card-hover-gradient-3:hover .premium-badge {
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    border-color: rgba(255, 255, 255, 0.2) !important;
-    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.34) !important;
+    border-color: rgba(24, 24, 27, 0.08) !important;
+    color: #831843 !important;
   }
+
   .card-hover-gradient-3:hover svg {
+    stroke: #831843 !important;
+  }
+
+  /* Gradient Hover Card 4 (Powder Rose) */
+  .card-hover-gradient-4 {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .card-hover-gradient-4::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #FFF7FA;
+    background: linear-gradient(90deg, rgba(255, 247, 250, 1) 0%, rgba(255, 225, 236, 1) 68%, rgba(255, 194, 212, 1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -2;
+  }
+
+  .card-hover-gradient-4::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+
+  .card-hover-gradient-4:hover::before,
+  .card-hover-gradient-4:hover::after {
+    opacity: 1;
+  }
+
+  .card-hover-gradient-4:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -12px rgba(255, 194, 212, 0.5);
+    border-color: transparent !important;
+  }
+
+  .card-hover-gradient-4:hover * {
+    color: #18181B !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+    border-color: rgba(24, 24, 27, 0.08) !important;
+  }
+
+  .card-hover-gradient-4:hover .premium-badge {
+    background-color: rgba(255, 255, 255, 0.34) !important;
+    border-color: rgba(24, 24, 27, 0.08) !important;
+    color: #831843 !important;
+  }
+
+  .card-hover-gradient-4:hover svg {
+    stroke: #831843 !important;
+  }
+
+  /* Creator Showcase Hover Gradient (Vibrant Pink-to-Orange) */
+  .creator-showcase-hover-gradient {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .creator-showcase-hover-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, #ff01ff 0%, #ff01d8 20%, #ff1aae 40%, #ff4384 60%, #ff705a 80%, #ff9432 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -2;
+  }
+
+  .creator-showcase-hover-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+
+  .creator-showcase-hover-gradient:hover::before,
+  .creator-showcase-hover-gradient:hover::after {
+    opacity: 1;
+  }
+
+  .creator-showcase-hover-gradient:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -12px rgba(255, 1, 216, 0.45);
+    border-color: transparent !important;
+  }
+
+  /* Target only the right side text container to keep the image overlay text white */
+  .creator-showcase-hover-gradient:hover .creator-card-info * {
+    color: #18181B !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+    border-color: rgba(24, 24, 27, 0.08) !important;
+  }
+
+  .creator-showcase-hover-gradient:hover .creator-card-info .premium-badge {
+    background-color: rgba(255, 255, 255, 0.34) !important;
+    border-color: rgba(24, 24, 27, 0.08) !important;
+    color: #831843 !important;
+  }
+
+  .creator-showcase-hover-gradient:hover .creator-card-info svg {
+    stroke: #831843 !important;
+  }
+
+  /* Infinite Marquee Slideshow */
+  .marquee-container {
+    display: flex;
+    overflow: visible;
+    width: 100%;
+    position: relative;
+    padding: 32px 0;
+    pointer-events: auto;
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
+  }
+
+  .marquee-container.is-dragging {
+    cursor: grabbing;
+  }
+
+  .marquee-container.is-dragging .premium-3d-card {
+    pointer-events: none;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 32px;
+    width: max-content;
+    will-change: transform;
+  }
+
+  /* 3D Model Card Styles */
+  .premium-3d-card {
+    transform-style: preserve-3d;
+    will-change: transform;
+    background: #FFFFFF;
+    border: 1px solid rgba(24, 24, 27, 0.05);
+  }
+
+  /* Glare Overlay on Card */
+  .premium-3d-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.22) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .premium-3d-card:hover::before {
+    opacity: 1;
+  }
+
+  .premium-3d-card:hover {
+    border-color: rgba(135, 0, 86, 0.15) !important;
+    box-shadow: 
+      0 30px 60px -15px rgba(24, 24, 27, 0.12),
+      0 12px 30px -20px rgba(135, 0, 86, 0.2);
+  }
+
+  .how-hover-gradient-1,
+  .how-hover-gradient-2,
+  .how-hover-gradient-3,
+  .how-hover-gradient-4,
+  .how-hover-gradient-5,
+  .how-hover-gradient-6 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition:
+      transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.38s ease,
+      box-shadow 0.38s ease;
+  }
+
+  .how-hover-gradient-1::before,
+  .how-hover-gradient-2::before,
+  .how-hover-gradient-3::before,
+  .how-hover-gradient-4::before,
+  .how-hover-gradient-5::before,
+  .how-hover-gradient-6::before,
+  .how-hover-gradient-1::after,
+  .how-hover-gradient-2::after,
+  .how-hover-gradient-3::after,
+  .how-hover-gradient-4::after,
+  .how-hover-gradient-5::after,
+  .how-hover-gradient-6::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.38s ease;
+    pointer-events: none;
+  }
+
+  .how-hover-gradient-1::before,
+  .how-hover-gradient-2::before,
+  .how-hover-gradient-3::before,
+  .how-hover-gradient-4::before,
+  .how-hover-gradient-5::before,
+  .how-hover-gradient-6::before {
+    z-index: -2;
+  }
+
+  .how-hover-gradient-1::after,
+  .how-hover-gradient-2::after,
+  .how-hover-gradient-3::after,
+  .how-hover-gradient-4::after,
+  .how-hover-gradient-5::after,
+  .how-hover-gradient-6::after {
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+  }
+
+  .how-hover-gradient-1::before {
+    background: linear-gradient(0deg, #7df9ff 0.000%, #4ddfff 8.333%, #1ec8ff 16.667%, #009dff 25.000%, #006eff 33.333%, #304ffe 41.667%, #5e35b1 50.000%, #4527a0 58.333%, #311b92 66.667%, #18084f 75.000%, #080818 83.333%, #000000 91.667%, #000000 100.000%);
+  }
+
+  .how-hover-gradient-2::before {
+    background: linear-gradient(0deg, #d9ff00 0.000%, #b8ff00 8.333%, #8cff00 16.667%, #5eff00 25.000%, #2fff00 33.333%, #00e676 41.667%, #00c853 50.000%, #00a843 58.333%, #007c31 66.667%, #004d1f 75.000%, #00190a 83.333%, #000000 91.667%, #000000 100.000%);
+  }
+
+  .how-hover-gradient-3::before {
+    background: linear-gradient(0deg, #ffc174 0.000%, #ffb05b 8.333%, #ff903b 16.667%, #ff6417 25.000%, #ff3100 33.333%, #ff0000 41.667%, #cf0000 50.000%, #8d0000 58.333%, #490000 66.667%, #070000 75.000%, #000000 83.333%, #000000 91.667%, #000000 100.000%);
+  }
+
+  .how-hover-gradient-4::before {
+    background: linear-gradient(0deg, #c7ffd8 0.000%, #8fffe4 8.333%, #52f7ff 16.667%, #22d3ee 25.000%, #00b8ff 33.333%, #0090ff 41.667%, #2563eb 50.000%, #4f46e5 58.333%, #4338ca 66.667%, #25135f 75.000%, #0f0826 83.333%, #030307 91.667%, #000000 100.000%);
+  }
+
+  .how-hover-gradient-5::before {
+    background: linear-gradient(0deg, #ff5ec4 0.000%, #ff44b8 8.333%, #ff2ea8 16.667%, #e93fff 25.000%, #c44dff 33.333%, #9b5dff 41.667%, #7c4dff 50.000%, #5c6bff 58.333%, #3b82f6 66.667%, #183a9e 75.000%, #0d1b4d 83.333%, #040811 91.667%, #000000 100.000%);
+  }
+
+  .how-hover-gradient-6::before {
+    background: linear-gradient(135deg, #FF008A, #FF5FD2, #FFD1F5);
+  }
+
+  .how-hover-gradient-1:hover::before,
+  .how-hover-gradient-2:hover::before,
+  .how-hover-gradient-3:hover::before,
+  .how-hover-gradient-4:hover::before,
+  .how-hover-gradient-5:hover::before,
+  .how-hover-gradient-6:hover::before,
+  .how-hover-gradient-1:hover::after,
+  .how-hover-gradient-2:hover::after,
+  .how-hover-gradient-3:hover::after,
+  .how-hover-gradient-4:hover::after,
+  .how-hover-gradient-5:hover::after,
+  .how-hover-gradient-6:hover::after {
+    opacity: 1;
+  }
+
+  .how-hover-gradient-1:hover,
+  .how-hover-gradient-2:hover,
+  .how-hover-gradient-3:hover,
+  .how-hover-gradient-4:hover,
+  .how-hover-gradient-5:hover,
+  .how-hover-gradient-6:hover {
+    transform: translate3d(-8px, -8px, 0);
+    border-color: transparent !important;
+    box-shadow: 0 24px 46px -20px rgba(48, 79, 254, 0.45), 0 18px 42px -28px rgba(34, 211, 238, 0.38);
+  }
+
+  .how-hover-gradient-1:hover *,
+  .how-hover-gradient-2:hover *,
+  .how-hover-gradient-3:hover *,
+  .how-hover-gradient-4:hover *,
+  .how-hover-gradient-5:hover *,
+  .how-hover-gradient-6:hover * {
+    color: #ffffff !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .how-hover-gradient-1:hover svg,
+  .how-hover-gradient-2:hover svg,
+  .how-hover-gradient-3:hover svg,
+  .how-hover-gradient-4:hover svg,
+  .how-hover-gradient-5:hover svg,
+  .how-hover-gradient-6:hover svg {
     stroke: #ffffff !important;
+  }
+
+  .benefit-hover-gradient-1,
+  .benefit-hover-gradient-2,
+  .benefit-hover-gradient-3,
+  .benefit-hover-gradient-4,
+  .benefit-hover-gradient-5 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition:
+      transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.38s ease,
+      box-shadow 0.38s ease;
+  }
+
+  .benefit-hover-gradient-1::before,
+  .benefit-hover-gradient-2::before,
+  .benefit-hover-gradient-3::before,
+  .benefit-hover-gradient-4::before,
+  .benefit-hover-gradient-5::before,
+  .benefit-hover-gradient-1::after,
+  .benefit-hover-gradient-2::after,
+  .benefit-hover-gradient-3::after,
+  .benefit-hover-gradient-4::after,
+  .benefit-hover-gradient-5::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.38s ease;
+    pointer-events: none;
+  }
+
+  .benefit-hover-gradient-1::before,
+  .benefit-hover-gradient-2::before,
+  .benefit-hover-gradient-3::before,
+  .benefit-hover-gradient-4::before,
+  .benefit-hover-gradient-5::before {
+    z-index: -2;
+  }
+
+  .benefit-hover-gradient-1::after,
+  .benefit-hover-gradient-2::after,
+  .benefit-hover-gradient-3::after,
+  .benefit-hover-gradient-4::after,
+  .benefit-hover-gradient-5::after {
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px) saturate(1.08);
+  }
+
+  .benefit-hover-gradient-1::before {
+    background:
+      radial-gradient(circle at 55% 60%, #870056 0%, transparent 35%),
+      radial-gradient(circle at 80% 25%, #8b5cf6 0%, transparent 40%),
+      radial-gradient(circle at 20% 70%, #22d3ee 0%, transparent 35%),
+      linear-gradient(135deg, #faf5ef 0%, #f6eee8 100%);
+  }
+
+  .benefit-hover-gradient-2::before {
+    background:
+      radial-gradient(circle at 60% 55%, #870056 0%, transparent 35%),
+      radial-gradient(circle at 85% 30%, #ec4899 0%, transparent 40%),
+      radial-gradient(circle at 25% 40%, #3b82f6 0%, transparent 38%),
+      linear-gradient(135deg, #fdf7f3 0%, #f6f0ec 100%);
+  }
+
+  .benefit-hover-gradient-3::before {
+    background:
+      radial-gradient(circle at 55% 60%, #22d3ee 0%, transparent 35%),
+      radial-gradient(circle at 78% 28%, #8b5cf6 0%, transparent 40%),
+      radial-gradient(circle at 25% 70%, #84cc16 0%, transparent 35%),
+      linear-gradient(135deg, #faf8f3 0%, #f4f1eb 100%);
+  }
+
+  .benefit-hover-gradient-4::before {
+    background:
+      radial-gradient(circle at 58% 58%, #870056 0%, transparent 35%),
+      radial-gradient(circle at 85% 35%, #c026d3 0%, transparent 40%),
+      radial-gradient(circle at 20% 40%, #BE185D 0%, transparent 38%),
+      linear-gradient(135deg, #fff6f1 0%, #f7eee8 100%);
+  }
+
+  .benefit-hover-gradient-5::before {
+    background:
+      radial-gradient(circle at 58% 58%, #870056 0%, transparent 35%),
+      radial-gradient(circle at 82% 28%, #f472b6 0%, transparent 40%),
+      radial-gradient(circle at 22% 55%, #14b8a6 0%, transparent 38%),
+      linear-gradient(135deg, #faf7f2 0%, #f5f0ea 100%);
+  }
+
+  .benefit-hover-gradient-1:hover::before,
+  .benefit-hover-gradient-2:hover::before,
+  .benefit-hover-gradient-3:hover::before,
+  .benefit-hover-gradient-4:hover::before,
+  .benefit-hover-gradient-5:hover::before,
+  .benefit-hover-gradient-1:hover::after,
+  .benefit-hover-gradient-2:hover::after,
+  .benefit-hover-gradient-3:hover::after,
+  .benefit-hover-gradient-4:hover::after,
+  .benefit-hover-gradient-5:hover::after {
+    opacity: 1;
+  }
+
+  .benefit-hover-gradient-1:hover,
+  .benefit-hover-gradient-2:hover,
+  .benefit-hover-gradient-3:hover,
+  .benefit-hover-gradient-4:hover,
+  .benefit-hover-gradient-5:hover {
+    transform: translate3d(-8px, -8px, 0);
+    border-color: transparent !important;
+    box-shadow: 0 24px 46px -20px rgba(135, 0, 86, 0.3), 0 18px 42px -26px rgba(139, 92, 246, 0.38);
+  }
+
+  .benefit-hover-gradient-1:hover *,
+  .benefit-hover-gradient-2:hover *,
+  .benefit-hover-gradient-3:hover *,
+  .benefit-hover-gradient-4:hover *,
+  .benefit-hover-gradient-5:hover * {
+    color: #18181B !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.42);
+    border-color: rgba(24, 24, 27, 0.08) !important;
+  }
+
+  .benefit-hover-gradient-1:hover svg,
+  .benefit-hover-gradient-2:hover svg,
+  .benefit-hover-gradient-3:hover svg,
+  .benefit-hover-gradient-4:hover svg,
+  .benefit-hover-gradient-5:hover svg {
+    stroke: #18181B !important;
+  }
+
+  .premium-perks-hover-gradient {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition:
+      transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.38s ease,
+      box-shadow 0.38s ease;
+  }
+
+  .premium-perks-hover-gradient::before,
+  .premium-perks-hover-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.38s ease;
+    pointer-events: none;
+  }
+
+  .premium-perks-hover-gradient::before {
+    z-index: -2;
+    background: linear-gradient(180deg, #311049 0.000%, #530064 20.000%, #760080 40.000%, #97189e 60.000%, #b341bd 80.000%, #c974dc 100.000%);
+  }
+
+  .premium-perks-hover-gradient::after {
+    z-index: -1;
+    background: rgba(20, 5, 32, 0.18);
+    backdrop-filter: blur(10px);
+  }
+
+  .premium-perks-hover-gradient:hover::before,
+  .premium-perks-hover-gradient:hover::after {
+    opacity: 1;
+  }
+
+  .premium-perks-hover-gradient:hover {
+    transform: translate3d(-8px, -8px, 0);
+    border-color: transparent !important;
+    box-shadow: 0 26px 52px -24px rgba(83, 0, 100, 0.52), 0 16px 40px -28px rgba(201, 116, 220, 0.55);
+  }
+
+  .premium-perks-hover-gradient:hover * {
+    color: #ffffff !important;
+    text-shadow: 0 1px 6px rgba(28, 6, 42, 0.45);
+    border-color: rgba(255, 255, 255, 0.22) !important;
+  }
+
+  .premium-perks-hover-gradient:hover svg {
+    stroke: #ffffff !important;
+  }
+
+  .masterclasses-hover-gradient {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition:
+      transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.38s ease,
+      box-shadow 0.38s ease;
+  }
+
+  .masterclasses-hover-gradient::before,
+  .masterclasses-hover-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.38s ease;
+    pointer-events: none;
+  }
+
+  .masterclasses-hover-gradient::before {
+    z-index: -2;
+    background: linear-gradient(0deg, #ffc174 0.000%, #ffb05b 8.333%, #ff903b 16.667%, #ff6417 25.000%, #ff3100 33.333%, #ff0000 41.667%, #cf0000 50.000%, #8d0000 58.333%, #490000 66.667%, #070000 75.000%, #000000 83.333%, #000000 91.667%, #000000 100.000%);
+  }
+
+  .masterclasses-hover-gradient::after {
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+  }
+
+  .masterclasses-hover-gradient:hover::before,
+  .masterclasses-hover-gradient:hover::after {
+    opacity: 1;
+  }
+
+  .masterclasses-hover-gradient:hover {
+    transform: translate3d(-8px, -8px, 0);
+    border-color: transparent !important;
+    box-shadow: 0 28px 54px -26px rgba(207, 0, 0, 0.48), 0 18px 44px -30px rgba(0, 0, 0, 0.7);
+  }
+
+  .masterclasses-hover-gradient:hover * {
+    color: #ffffff !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+    border-color: rgba(255, 255, 255, 0.22) !important;
+  }
+
+  .masterclasses-hover-gradient:hover svg {
+    stroke: #ffffff !important;
+  }
+
+  .masterclasses-hover-gradient:hover .masterclasses-secondary-button,
+  .masterclasses-hover-gradient:hover .masterclasses-secondary-button * {
+    color: #18181B !important;
+    text-shadow: none !important;
+  }
+
+  .masterclasses-hover-gradient:hover .masterclasses-secondary-button {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-color: rgba(255, 255, 255, 0.78) !important;
+    box-shadow: 0 14px 28px -18px rgba(0, 0, 0, 0.45);
+  }
+
+  .masterclasses-hover-gradient:hover .masterclasses-secondary-button svg {
+    stroke: #18181B !important;
+  }
+
+  .managed-creator-hover-gradient {
+    z-index: 1;
+    isolation: isolate;
+    transition:
+      transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.38s ease,
+      border-color 0.38s ease;
+  }
+
+  .managed-creator-hover-gradient::before,
+  .managed-creator-hover-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.38s ease;
+    pointer-events: none;
+  }
+
+  .managed-creator-hover-gradient::before {
+    z-index: -2;
+    background: linear-gradient(0deg, #ecd114 0.000%, #ff4354 50.000%, #91008b 100.000%);
+  }
+
+  .managed-creator-hover-gradient::after {
+    z-index: -1;
+    background: rgba(10, 0, 10, 0.22);
+    backdrop-filter: blur(8px);
+  }
+
+  .managed-creator-hover-gradient:hover::before,
+  .managed-creator-hover-gradient:hover::after {
+    opacity: 1;
+  }
+
+  .managed-creator-hover-gradient:hover {
+    transform: translate3d(-8px, -8px, 0);
+    box-shadow: 0 30px 58px -28px rgba(145, 0, 139, 0.5), 0 18px 42px -30px rgba(255, 67, 84, 0.55);
+  }
+
+  .managed-creator-hover-gradient:hover * {
+    color: #ffffff !important;
+    text-shadow: 0 1px 6px rgba(32, 0, 28, 0.5);
+    border-color: rgba(255, 255, 255, 0.22) !important;
+  }
+
+  .managed-creator-hover-gradient:hover svg {
+    stroke: #ffffff !important;
+  }
+
+  .managed-creator-hover-gradient:hover .managed-creator-secondary-button {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.44) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
   }
 
   /* Blur overlay for hero video background */
@@ -343,14 +1016,12 @@
     z-index: 3;
     pointer-events: none;
     background:
-      linear-gradient(
-        to bottom,
+      linear-gradient(to bottom,
         #FAFAF9 0%,
         rgba(250, 250, 249, 0.98) 20%,
         rgba(250, 250, 249, 0.82) 44%,
         rgba(250, 250, 249, 0.38) 72%,
-        rgba(250, 250, 249, 0) 100%
-      );
+        rgba(250, 250, 249, 0) 100%);
     -webkit-backdrop-filter: blur(18px) saturate(1.08);
     backdrop-filter: blur(18px) saturate(1.08);
     -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
@@ -364,14 +1035,12 @@
     z-index: 3;
     pointer-events: none;
     background:
-      linear-gradient(
-        to top,
+      linear-gradient(to top,
         #FFFFFF 0%,
         rgba(255, 255, 255, 0.98) 20%,
         rgba(255, 255, 255, 0.82) 44%,
         rgba(255, 255, 255, 0.38) 72%,
-        rgba(255, 255, 255, 0) 100%
-      );
+        rgba(255, 255, 255, 0) 100%);
     -webkit-backdrop-filter: blur(18px) saturate(1.08);
     backdrop-filter: blur(18px) saturate(1.08);
     -webkit-mask-image: linear-gradient(to top, black 0%, black 55%, transparent 100%);
@@ -401,5 +1070,57 @@
     background: linear-gradient(to top, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0));
     -webkit-mask-image: linear-gradient(to top, black 0%, black 35%, transparent 100%);
     mask-image: linear-gradient(to top, black 0%, black 35%, transparent 100%);
+  }
+
+  .proof-hover-gradient {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition:
+      transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.38s ease,
+      box-shadow 0.38s ease;
+  }
+
+  .proof-hover-gradient::before,
+  .proof-hover-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.38s ease;
+    pointer-events: none;
+  }
+
+  .proof-hover-gradient::before {
+    z-index: -2;
+    background: linear-gradient(315deg, #ffc488 0.000%, #ffa375 16.667%, #ff907a 33.333%, #ff9394 50.000%, #ffacb0 66.667%, #ffcdb9 83.333%, #ffe6aa 100.000%);
+  }
+
+  .proof-hover-gradient::after {
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+  }
+
+  .proof-hover-gradient:hover::before,
+  .proof-hover-gradient:hover::after {
+    opacity: 1;
+  }
+
+  .proof-hover-gradient:hover {
+    transform: translate3d(-8px, -8px, 0);
+    border-color: transparent !important;
+    box-shadow: 0 28px 54px -26px rgba(255, 163, 117, 0.38), 0 18px 44px -30px rgba(255, 230, 170, 0.4);
+  }
+
+  .proof-hover-gradient:hover * {
+    color: #18181B !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.42);
+    border-color: rgba(24, 24, 27, 0.08) !important;
+  }
+
+  .proof-hover-gradient:hover svg {
+    stroke: #18181B !important;
   }
 }

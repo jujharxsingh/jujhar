@@ -15,7 +15,7 @@ export default function ColorTransition({
   }
 
   // Select horizontal glow gradient based on variant
-  let glowGradient = 'from-[#ffff8d]/40 via-[#ff8d22]/80 to-[#78130c]/60';
+  let glowGradient = 'from-[#C90080]/35 via-[#870056]/80 to-[#5F003D]/65';
   if (variant === 'vibrant') {
     glowGradient = 'from-[#d9b3e2]/40 via-[#9d54d5]/80 to-[#522ca4]/60';
   } else if (variant === 'cool') {

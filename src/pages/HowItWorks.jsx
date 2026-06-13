@@ -96,16 +96,16 @@ export default function HowItWorks() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 }
+      transition: { staggerChildren: 0.05 }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: 'spring', stiffness: 260, damping: 25 }
+      transition: { duration: 0.15, ease: 'easeOut' }
     }
   };
 
@@ -126,7 +126,7 @@ export default function HowItWorks() {
           variants={containerVariants}
           className="flex flex-col items-center space-y-4"
         >
-          <motion.span variants={itemVariants} className="eyebrow">
+          <motion.span variants={itemVariants} className="eyebrow inline-block">
             Onboarding Process
           </motion.span>
           <motion.h1 
@@ -176,8 +176,8 @@ export default function HowItWorks() {
                         <motion.div
                           animate={{
                             scale: isActive ? 1.25 : 1,
-                            backgroundColor: isActive ? '#C85A3C' : isCompleted ? '#831843' : '#FAFAF9',
-                            borderColor: isActive ? '#C85A3C' : isCompleted ? '#831843' : 'rgba(24,24,27,0.15)'
+                            backgroundColor: isActive ? '#870056' : isCompleted ? '#831843' : '#FAFAF9',
+                            borderColor: isActive ? '#870056' : isCompleted ? '#831843' : 'rgba(24,24,27,0.15)'
                           }}
                           className="h-4 w-4 rounded-full border-2 flex items-center justify-center text-[8px] font-bold text-white shadow-sm z-10"
                           transition={{ duration: 0.25 }}
@@ -215,13 +215,11 @@ export default function HowItWorks() {
                 <motion.div
                   id={`step-${idx}`}
                   key={step.num}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-120px' }}
-                  transition={{ type: 'spring', stiffness: 220, damping: 22 }}
-                  className={`step-card group relative p-8 sm:p-10 rounded-[2rem] border bg-white/70 backdrop-blur-md transition-all duration-450 flex flex-col space-y-5 ${
-                    idx % 3 === 0 ? 'card-hover-gradient-1' : idx % 3 === 1 ? 'card-hover-gradient-2' : 'card-hover-gradient-3'
-                  } ${
+                  transition={{ duration: 0.15, ease: 'easeOut' }}
+                  className={`step-card group relative p-8 sm:p-10 rounded-[2rem] border bg-white/70 backdrop-blur-md transition-all duration-450 flex flex-col space-y-5 how-hover-gradient-2 ${
                     isActive 
                       ? 'border-gold/30 shadow-premium-card ring-1 ring-gold/10' 
                       : 'border-espresso/[0.04] shadow-depth hover:border-espresso/10 hover:shadow-depth-lg'
@@ -279,11 +277,11 @@ export default function HowItWorks() {
       {/* Creative Freedom & Lifestyle Highlight Banner */}
       <section className="mx-auto max-w-4xl px-6 pt-16 pb-8 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="premium-card bg-gradient-ivory border border-gold/15 p-8 flex flex-col sm:flex-row gap-6 items-center shadow-depth card-hover-gradient-3"
+          transition={{ duration: 0.15, ease: 'easeOut' }}
+          className="premium-card bg-gradient-ivory border border-gold/15 p-8 flex flex-col sm:flex-row gap-6 items-center shadow-depth how-hover-gradient-2"
         >
           <div className="h-12 w-12 rounded-2xl bg-gold/10 flex items-center justify-center text-gold shrink-0 shadow-sm">
             <Sparkles className="h-6 w-6" />
@@ -300,20 +298,20 @@ export default function HowItWorks() {
       {/* Final Action CTA Block */}
       <section className="mx-auto max-w-4xl px-6 pt-8 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="relative overflow-hidden rounded-[2rem] bg-gradient-espresso text-cream px-8 py-12 sm:px-12 sm:py-16 shadow-depth-lg text-center"
+          transition={{ duration: 0.15, ease: 'easeOut' }}
+          className="managed-creator-hover-gradient relative overflow-hidden rounded-[2rem] bg-gradient-espresso text-cream px-8 py-12 sm:px-12 sm:py-16 shadow-depth-lg text-center"
         >
           <div className="absolute inset-0 -z-10 bg-dot-gold opacity-10" />
           <div className="max-w-2xl mx-auto flex flex-col items-center space-y-5">
-            <span className="font-mono text-[9px] uppercase tracking-widest text-gold-light font-bold">Take Action</span>
+            <span className="font-mono text-[9px] uppercase tracking-widest text-gold-light font-bold">Start Earning With Live Streaming</span>
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight font-sans">
-              Become a Managed Creator Today.
+              Turn Your Live Time Into Creator Income.
             </h2>
             <p className="text-xs sm:text-sm text-cream/70 font-light max-w-lg leading-relaxed">
-              Submit your private application, or jump straight to a secure consultation with an onboarding manager via WhatsApp.
+              Join IM Models Agency and get support with profile setup, live training, virtual gifts, PK battles, and growth strategy — no investment required.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 w-full justify-center pt-4">
               <Button 
@@ -325,14 +323,14 @@ export default function HowItWorks() {
                 className="gap-2 px-8 min-h-11 w-full sm:w-auto"
               >
                 <MessageCircle className="h-4 w-4 fill-white" />
-                Chat on WhatsApp
+                CHAT ON WHATSAPP
               </Button>
               <Button 
                 to="/apply" 
                 variant="secondary"
-                className="gap-2 px-8 min-h-11 w-full sm:w-auto text-white border-white/20 hover:bg-white/10 hover:text-white"
+                className="managed-creator-secondary-button gap-2 px-8 min-h-11 w-full sm:w-auto text-white border-white/20 hover:bg-white/10 hover:text-white"
               >
-                Apply as Creator
+                APPLY AS CREATOR
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>

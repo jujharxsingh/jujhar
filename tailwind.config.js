@@ -9,13 +9,13 @@ export default {
         espresso: { DEFAULT: '#18181B', light: '#27272A', dark: '#09090B' }, // Charcoal Ink (#18181B)
         cream: { DEFAULT: '#FFFFFF', soft: '#FAFAF9' }, // Pure Surface (#FFFFFF)
         burgundy: { DEFAULT: '#831843', light: '#9D174D', dark: '#500724', muted: '#BE185D' }, // Burgundy Accent (#831843)
-        gold: { DEFAULT: '#C85A3C', light: '#E07A5F', dark: '#A13D24', bright: '#FF6B35', muted: '#DCA494' }, // Gold/Rust Highlight (#C85A3C)
+        gold: { DEFAULT: '#870056', light: '#A8006A', dark: '#5F003D', bright: '#C90080', muted: '#D98BBC' }, // Dark Magenta Highlight (#870056)
         ebony: { DEFAULT: '#09090B', soft: '#18181B' },
         brand: {
           bg: '#FAFAF9',
           text: '#18181B',
           accent: '#831843',
-          gold: '#C85A3C',
+          gold: '#870056',
           card: '#FFFFFF',
           dark: '#09090B',
         },
@@ -66,10 +66,10 @@ export default {
         'depth-lg': '0 20px 40px -15px rgba(24,24,27,0.12)',
         'glass': '0 8px 32px 0 rgba(24,24,27,0.04), inset 0 1px 0 rgba(255,255,255,0.6)',
         'glass-dark': '0 8px 32px 0 rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05)',
-        'premium-card': '0 15px 35px -10px rgba(131,24,67,0.05), 0 5px 15px -5px rgba(200, 90, 60, 0.03)',
+        'premium-card': '0 15px 35px -10px rgba(131,24,67,0.05), 0 5px 15px -5px rgba(135, 0, 86, 0.04)',
       },
       backgroundImage: {
-        'gradient-gold': 'linear-gradient(135deg, #E07A5F 0%, #C85A3C 50%, #A13D24 100%)',
+        'gradient-gold': 'linear-gradient(135deg, #A8006A 0%, #870056 50%, #5F003D 100%)',
         'gradient-burgundy': 'linear-gradient(135deg, #9D174D 0%, #831843 60%, #500724 100%)',
         'gradient-espresso': 'linear-gradient(180deg, #18181B 0%, #09090B 100%)',
         'gradient-ivory': 'linear-gradient(180deg, #FAFAF9 0%, #F5F5F4 100%)',

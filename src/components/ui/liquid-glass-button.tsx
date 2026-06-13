@@ -205,18 +205,18 @@ const colorVariants: Record<
     textShadow: "[text-shadow:_0_-1px_0_rgb(146_64_14_/_100%)]",
   },
   gold: {
-    outer: "bg-gradient-to-b from-[#917100] to-[#EAD98F]",
-    inner: "bg-gradient-to-b from-[#FFFDDD] via-[#856807] to-[#FFF1B3]",
-    button: "bg-gradient-to-b from-[#FFEBA1] to-[#9B873F]",
-    textColor: "text-[#FFFDE5]",
-    textShadow: "[text-shadow:_0_-1px_0_rgb(178_140_2_/_100%)]",
+    outer: "bg-gradient-to-b from-[#5F003D] to-[#D98BBC]",
+    inner: "bg-gradient-to-b from-[#FFE5F4] via-[#870056] to-[#F7B8DD]",
+    button: "bg-gradient-to-b from-[#C90080] to-[#870056]",
+    textColor: "text-white",
+    textShadow: "[text-shadow:_0_-1px_0_rgb(95_0_61_/_100%)]",
   },
   bronze: {
-    outer: "bg-gradient-to-b from-[#864813] to-[#E9B486]",
-    inner: "bg-gradient-to-b from-[#EDC5A1] via-[#5F2D01] to-[#FFDEC1]",
-    button: "bg-gradient-to-b from-[#FFE3C9] to-[#A36F3D]",
-    textColor: "text-[#FFF7F0]",
-    textShadow: "[text-shadow:_0_-1px_0_rgb(124_45_18_/_100%)]",
+    outer: "bg-gradient-to-b from-[#6E0046] to-[#E7A6CC]",
+    inner: "bg-gradient-to-b from-[#F8CFE7] via-[#870056] to-[#FFE5F4]",
+    button: "bg-gradient-to-b from-[#D10084] to-[#6E0046]",
+    textColor: "text-white",
+    textShadow: "[text-shadow:_0_-1px_0_rgb(110_0_70_/_100%)]",
   },
 };
 
