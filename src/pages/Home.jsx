@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, MessageCircle, Shield, Award, Sparkles, CheckCircle2, TrendingUp, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -235,6 +235,37 @@ const publicAsset = (path) => {
   return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
 };
 
+const faqItems = [
+  {
+    question: 'Is there any initial investment required?',
+    answer: 'No. IM Models Agency does not charge joining fees, setup fees, or training fees. You can start your live creator journey without any investment.'
+  },
+  {
+    question: 'What kind of platforms do creators stream on?',
+    answer: 'We guide creators for live streaming platforms like Tango and similar verified live apps where creators can interact with viewers, receive virtual gifts, and grow their audience.'
+  },
+  {
+    question: 'Is this adult or escort work?',
+    answer: 'No. This is not adult work or escort work. It is a professional live streaming creator opportunity focused on entertainment, lifestyle, beauty, fashion, singing, dancing, fitness, conversation, and audience engagement.'
+  },
+  {
+    question: 'How do creators earn from live streaming?',
+    answer: 'Creators earn through virtual gifts sent by viewers during live sessions. Consistent creators can also grow through PK battles, audience engagement, regular live hours, and agency performance support.'
+  },
+  {
+    question: 'Does IM Models Agency give bonuses?',
+    answer: 'Yes. IM Models Agency may provide bonus support from our own side to encourage consistent creators and help them grow. Bonus support depends on performance, consistency, live activity, and agency review.'
+  },
+  {
+    question: 'Can beginners apply without experience?',
+    answer: 'Yes. Beginners can apply if they are 18+, confident on camera, presentable, and willing to learn. We help with profile setup, live training, content ideas, and first-live guidance.'
+  },
+  {
+    question: 'What support does IM Models Agency provide?',
+    answer: 'We help with profile setup, live confidence, virtual gifts guidance, PK planning, agency bonus guidance, content ideas, WhatsApp support, and weekly growth review so creators do not have to figure everything out alone.'
+  }
+];
+
 // Lightweight 3D Card with interactive tilt and glare
 const Model3DCard = ({ model }) => {
   const handleMouseMove = (e) => {
@@ -345,6 +376,7 @@ const Model3DCard = ({ model }) => {
 export default function Home() {
   const videoRef = useRef(null);
   const showcaseVideoRef = useRef(null);
+  const [activeFaq, setActiveFaq] = useState(0);
   const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
 
   // Refs for interactive drag-and-push marquee slideshow
@@ -1042,33 +1074,51 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            className="space-y-8"
+            className="faq-wheel-grid"
           >
-            <motion.div variants={itemVariants} className="border-b border-espresso/[0.06] pb-6">
-              <h4 className="text-base sm:text-lg font-semibold text-espresso flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-burgundy shrink-0" />
-                Is there any initial investment required?
-              </h4>
-              <p className="text-sm sm:text-base text-espresso/85 mt-2 leading-relaxed pl-8">
-                Absolutely none. IM Models Agency never charges setup fees, onboarding fees, or training costs. Our agency earns on commission from platform bonus tiers once you succeed, aligning our success directly with yours.
-              </p>
+            <motion.div variants={itemVariants} className="faq-wheel" style={{ '--active-faq': activeFaq }}>
+              {faqItems.map((faq, index) => {
+                const isActive = index === activeFaq;
+                const distance = Math.abs(index - activeFaq);
+
+                return (
+                  <button
+                    key={faq.question}
+                    type="button"
+                    onClick={() => setActiveFaq(index)}
+                    className={`faq-wheel-item ${isActive ? 'is-active' : ''}`}
+                    style={{
+                      '--faq-offset': index - activeFaq,
+                      '--faq-distance': distance
+                    }}
+                    aria-pressed={isActive}
+                  >
+                    <span className="faq-wheel-number">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="faq-wheel-question">{faq.question}</span>
+                  </button>
+                );
+              })}
             </motion.div>
-            <motion.div variants={itemVariants} className="border-b border-espresso/[0.06] pb-6">
-              <h4 className="text-base sm:text-lg font-semibold text-espresso flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-burgundy shrink-0" />
-                What kind of platforms do we stream on?
-              </h4>
-              <p className="text-sm sm:text-base text-espresso/85 mt-2 leading-relaxed pl-8">
-                We primarily focus on major global social streaming apps like Tango Live and other verified talent platforms that support secure, monetized broadcasts. All platform work complies with our strict privacy settings.
-              </p>
-            </motion.div>
-            <motion.div variants={itemVariants} className="border-b border-espresso/[0.06] pb-6">
-              <h4 className="text-base sm:text-lg font-semibold text-espresso flex items-center gap-3">
-                <HelpCircle className="h-5 w-5 text-burgundy shrink-0" />
-                Is this adult or escort work?
-              </h4>
-              <p className="text-sm sm:text-base text-espresso/85 mt-2 leading-relaxed pl-8">
-                No. We maintain a strictly professional, mainstream digital ecosystem. The streams are focused on entertainment, singing, makeup tutorials, conversational talent, and lifestyle hosting. We enforce rigid safety guidelines for all talent.
+
+            <motion.div
+              key={activeFaq}
+              variants={itemVariants}
+              initial={{ opacity: 0, rotateX: -8, y: 8 }}
+              animate={{ opacity: 1, rotateX: 0, y: 0 }}
+              transition={{ duration: 0.22, ease: 'easeOut' }}
+              className="faq-answer-popup"
+            >
+              <div className="flex items-center gap-3">
+                <div className="h-11 w-11 rounded-2xl bg-burgundy/10 flex items-center justify-center text-burgundy shrink-0">
+                  <HelpCircle className="h-5 w-5" />
+                </div>
+                <div>
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-burgundy">Question {String(activeFaq + 1).padStart(2, '0')}</span>
+                  <h4 className="text-lg sm:text-2xl font-bold text-espresso mt-1">{faqItems[activeFaq].question}</h4>
+                </div>
+              </div>
+              <p className="text-sm sm:text-base text-espresso/75 mt-5 leading-relaxed">
+                {faqItems[activeFaq].answer}
               </p>
             </motion.div>
           </motion.div>
