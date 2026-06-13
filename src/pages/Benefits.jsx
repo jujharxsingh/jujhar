@@ -262,7 +262,7 @@ export default function Benefits() {
               <Button
                 to="/apply"
                 variant="secondary"
-                className="gap-2 px-8"
+                className="premium-perks-secondary-button gap-2 px-8"
               >
                 Apply as Creator
                 <ArrowRight className="h-4 w-4" />

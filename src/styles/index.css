@@ -884,6 +884,22 @@
     stroke: #ffffff !important;
   }
 
+  .premium-perks-hover-gradient:hover .premium-perks-secondary-button,
+  .premium-perks-hover-gradient:hover .premium-perks-secondary-button * {
+    color: #141418 !important;
+    text-shadow: none !important;
+  }
+
+  .premium-perks-hover-gradient:hover .premium-perks-secondary-button {
+    background: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.82) !important;
+    box-shadow: 0 14px 30px -18px rgba(20, 20, 24, 0.45);
+  }
+
+  .premium-perks-hover-gradient:hover .premium-perks-secondary-button svg {
+    stroke: #141418 !important;
+  }
+
   .masterclasses-hover-gradient {
     position: relative;
     z-index: 1;
