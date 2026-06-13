@@ -863,23 +863,23 @@ export default function Home() {
           >
             <motion.div variants={itemVariants} className="flex flex-col items-center p-3 border-r border-espresso/[0.03] last:border-none">
               <Shield className="h-6 w-6 text-burgundy mb-2" />
-              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-espresso/80">18+ Age Restriction</span>
-              <p className="text-[10px] text-espresso/50 mt-0.5">Verified digital safety compliance</p>
+              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-espresso/80">18+ Creators Only</span>
+              <p className="text-[10px] text-espresso/50 mt-0.5">Safe creator opportunity</p>
             </motion.div>
             <motion.div variants={itemVariants} className="flex flex-col items-center p-3 md:border-r border-espresso/[0.03] last:border-none">
               <Award className="h-6 w-6 text-gold mb-2" />
-              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-espresso/80">Zero Upfront Cost</span>
-              <p className="text-[10px] text-espresso/50 mt-0.5">No platform fees or start contracts</p>
+              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-espresso/80">No Investment</span>
+              <p className="text-[10px] text-espresso/50 mt-0.5">Start without joining fees</p>
             </motion.div>
             <motion.div variants={itemVariants} className="flex flex-col items-center p-3 border-r border-espresso/[0.03] last:border-none">
               <Sparkles className="h-6 w-6 text-burgundy mb-2" />
-              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-espresso/80">Live Mentoring</span>
-              <p className="text-[10px] text-espresso/50 mt-0.5">Dedicated profile manager guidance</p>
+              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-espresso/80">Live Training</span>
+              <p className="text-[10px] text-espresso/50 mt-0.5">Guidance before and after you go live</p>
             </motion.div>
             <motion.div variants={itemVariants} className="flex flex-col items-center p-3 last:border-none">
               <CheckCircle2 className="h-6 w-6 text-gold mb-2" />
-              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-espresso/80">Creative Style</span>
-              <p className="text-[10px] text-espresso/50 mt-0.5">Flexible setup & custom branding controls</p>
+              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-espresso/80">Growth Support</span>
+              <p className="text-[10px] text-espresso/50 mt-0.5">Profile, PK, gifts, and bonus guidance</p>
             </motion.div>
           </motion.div>
         </div>
@@ -895,12 +895,12 @@ export default function Home() {
             viewport={{ once: true, amount: 0.1 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <motion.span variants={itemVariants} className="eyebrow inline-block">Professional Ecosystem</motion.span>
+            <motion.span variants={itemVariants} className="eyebrow inline-block">Creator Growth System</motion.span>
             <motion.h2 variants={itemVariants} className="text-3xl sm:text-5xl font-extrabold tracking-tight text-espresso mt-3">
-              How We Help You Grow Successfully.
+              Everything You Need To Start Earning Through Live Streaming.
             </motion.h2>
             <motion.p variants={itemVariants} className="text-base text-espresso/85 mt-4 leading-relaxed font-normal">
-              We specialize in supporting creators to establish a <strong>professional streaming brand</strong>. Our talent managers handle the details so you can focus on building relationships and engaging your audience <strong>safely</strong>.
+              IM Models Agency helps new and existing creators understand live streaming, set up their profile, go live with confidence, receive virtual gifts, join PK battles, and grow with consistent agency support.
             </motion.p>
           </motion.div>
 
@@ -916,9 +916,9 @@ export default function Home() {
               <div className="h-10 w-10 rounded-xl bg-burgundy/5 flex items-center justify-center text-burgundy">
                 <Award className="h-5 w-5" />
               </div>
-              <h3 className="text-lg font-extrabold text-espresso">Creative Branding</h3>
+              <h3 className="text-lg font-extrabold text-espresso">Profile Setup</h3>
               <p className="text-xs text-espresso/80 leading-relaxed font-normal">
-                We help you design <strong>custom profiles, backgrounds, and themes</strong> so your stream matches your unique <strong>creative identity and style</strong>.
+                We help you create a live-ready profile with better bio, category, presentation style, and first-live guidance so you do not start confused.
               </p>
             </motion.div>
 
@@ -927,9 +927,9 @@ export default function Home() {
               <div className="h-10 w-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold">
                 <Sparkles className="h-5 w-5" />
               </div>
-              <h3 className="text-lg font-extrabold text-espresso">Personal Guidance</h3>
+              <h3 className="text-lg font-extrabold text-espresso">Live Confidence Training</h3>
               <p className="text-xs text-espresso/80 leading-relaxed font-normal">
-                Receive direct <strong>1-on-1 mentoring</strong> covering professional ring-light settings, audio output, camera angles, and camera-confidence habits.
+                Learn what to say, how to interact with viewers, how to stay active on camera, and how to make your live sessions more engaging.
               </p>
             </motion.div>
 
@@ -938,9 +938,9 @@ export default function Home() {
               <div className="h-10 w-10 rounded-xl bg-burgundy/5 flex items-center justify-center text-burgundy">
                 <TrendingUp className="h-5 w-5" />
               </div>
-              <h3 className="text-lg font-extrabold text-espresso">Audience Strategy</h3>
+              <h3 className="text-lg font-extrabold text-espresso">Gifts, PK & Bonus Strategy</h3>
               <p className="text-xs text-espresso/80 leading-relaxed font-normal">
-                Learn to design interactive <strong>PK Battle formats</strong>, manage conversation boundaries gracefully, and establish <strong>loyal fan return patterns</strong>.
+                Understand how virtual gifts, PK battles, consistency targets, and agency bonus guidance can improve your earning potential over time.
               </p>
             </motion.div>
 
@@ -949,9 +949,9 @@ export default function Home() {
               <div className="h-10 w-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold">
                 <CheckCircle2 className="h-5 w-5" />
               </div>
-              <h3 className="text-lg font-extrabold text-espresso">Weekly Payouts</h3>
+              <h3 className="text-lg font-extrabold text-espresso">Weekly Growth Support</h3>
               <p className="text-xs text-espresso/80 leading-relaxed font-normal">
-                Enjoy complete transparency with detailed <strong>weekly analytics receipts</strong> and secure bank wire transfers paid <strong>on-time, every week</strong>.
+                Get WhatsApp support, performance review, content ideas, and practical guidance to improve your live routine week by week.
               </p>
             </motion.div>
           </motion.div>
